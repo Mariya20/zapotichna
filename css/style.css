@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Ubuntu&display=swap");
 :root {
-  --kaushanFont: "Kaushan Script";
+  --ubuntuFont: "Ubuntu";
   --montserratFont: "Montserrat";
   --titleColor: #333333;
   --descriptionColor: #575757;
@@ -25,29 +25,62 @@ body {
 }
 /* Container */
 .container {
+  position: relative;
+  padding-top: 100px;
   width: 100%;
   max-width: 1210px;
   margin: 0 auto;
   text-align: center;
+  z-index: 2;
 }
 /* Presentation */
 .presentation {
+  position: relative;
   background-image: url(../img/bg_photo.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 100vh;
 }
+.presentation::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+
+  opacity: 0.95;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgba(0, 0, 0, 0)
+  );
+}
+/* Image */
+.main_img {
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.main_img img {
+  max-width: 100%;
+}
 /* Title */
 .suptitle {
+  margin-top: 60px;
   padding-bottom: 23px;
-  font-family: var(--kaushanFont);
+  font-family: var(--ubuntuFont);
   color: var(--titleColor);
   font-size: 24px;
   text-align: center;
 }
 .title {
-  margin-bottom: 35px;
+  margin: 18px 0 35px;
   position: relative;
   color: var(--titleColor);
   font-size: 30px;
@@ -56,9 +89,9 @@ body {
   text-align: center;
 }
 .description {
-  margin: 0 auto 95px;
+  margin: 0 auto 100px;
 
-  font-family: var(--kaushanFont);
+  font-family: var(--ubuntuFont);
   font-size: 24px;
   line-height: 24px;
 
@@ -66,4 +99,21 @@ body {
   color: var(--descriptionColor);
 
   text-align: center;
+}
+/* Social */
+.social {
+}
+.social_item {
+  padding: 8px 16px;
+  margin-left: 2px;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
+.social_item:hover {
+  background-color: var(--descriptionColor);
 }
