@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300,400,700&display=swap");
+:root {
+  --kaushanFont: "Kaushan Script";
+  --montserratFont: "Montserrat";
+  --titleColor: #333333;
+  --descriptionColor: #575757;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+body {
+  margin: 0;
+  font-family: var(--montserratFont);
+  font-weight: 400;
+}
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1210px;
+  margin: 0 auto;
+  text-align: center;
+}
+/* Presentation */
+.presentation {
+  background-image: url(../img/bg_photo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+/* Title */
+.suptitle {
+  padding-bottom: 23px;
+  font-family: var(--kaushanFont);
+  color: var(--titleColor);
+  font-size: 24px;
+  text-align: center;
+}
+.title {
+  margin-bottom: 35px;
+  position: relative;
+  color: var(--titleColor);
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+.description {
+  margin: 0 auto 95px;
+
+  font-family: var(--kaushanFont);
+  font-size: 24px;
+  line-height: 24px;
+
+  max-width: 954px;
+  color: var(--descriptionColor);
+
+  text-align: center;
+}
