@@ -3,7 +3,6 @@
   --ubuntuFont: "Ubuntu";
   --montserratFont: "Montserrat";
   --titleColor: #333333;
-  --descriptionColor: #575757;
 }
 *,
 *::before,
@@ -26,16 +25,15 @@ body {
 /* Container */
 .container {
   position: relative;
-  padding-top: 100px;
   width: 100%;
-  max-width: 1210px;
-  margin: 0 auto;
   text-align: center;
   z-index: 2;
 }
 /* Presentation */
 .presentation {
+  display: flex;
   position: relative;
+  align-items: center;
   background-image: url(../img/bg_photo.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -49,18 +47,12 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-
+  background: rgba(126, 87, 194, 0.5);
   z-index: 1;
-
-  opacity: 0.95;
-  background-image: linear-gradient(
-    to bottom,
-    rgb(255, 255, 255),
-    rgba(0, 0, 0, 0)
-  );
 }
 /* Image */
 .main_img {
+  flex-direction: column;
   margin: 0 auto;
   width: 200px;
   height: 200px;
@@ -72,6 +64,7 @@ body {
 }
 /* Title */
 .suptitle {
+  flex-direction: column;
   margin-top: 60px;
   padding-bottom: 23px;
   font-family: var(--ubuntuFont);
@@ -80,6 +73,7 @@ body {
   text-align: center;
 }
 .title {
+  flex-direction: column;
   margin: 18px 0 35px;
   position: relative;
   color: var(--titleColor);
@@ -88,20 +82,10 @@ body {
   text-transform: uppercase;
   text-align: center;
 }
-.description {
-  margin: 0 auto 100px;
-
-  font-family: var(--ubuntuFont);
-  font-size: 24px;
-  line-height: 24px;
-
-  max-width: 954px;
-  color: var(--descriptionColor);
-
-  text-align: center;
-}
 /* Social */
 .social {
+  flex-direction: column;
+  align-self: flex-end;
 }
 .social_item {
   padding: 8px 16px;
@@ -115,5 +99,27 @@ body {
   color: white;
 }
 .social_item:hover {
-  background-color: var(--descriptionColor);
+  background-color: var(--titleColor);
+}
+
+@media screen and (max-width: 879px) {
+  .main_img {
+    width: 150px;
+    height: 150px;
+  }
+  .suptitle {
+    font-size: 18px;
+  }
+  .title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 519px) {
+  .suptitle {
+    font-size: 12px;
+  }
+  .title {
+    font-size: 18px;
+  }
 }
